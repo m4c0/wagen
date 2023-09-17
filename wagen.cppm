@@ -3,7 +3,9 @@ module;
 
 export module wagen;
 
-#ifdef _WIN32
+#if __APPLE__
+import :apple;
+#elif _WIN32
 import :windows;
 #endif
 
