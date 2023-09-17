@@ -7,15 +7,16 @@ export module wagen;
 import :windows;
 #endif
 
+#ifdef __APPLE__
+#define FN(x) PFN_##x x = &::x;
+#else
+#define FN(x) PFN_##x x = reinterpret_cast<PFN_##x>(load(#x));
+#endif
+
 export namespace wagen {
 using VkInstance = ::VkInstance;
 using VkInstanceCreateInfo = ::VkInstanceCreateInfo;
 using VkResult = ::VkResult;
 
-#ifdef __APPLE__
-PFN_vkCreateInstance vkCreateInstance = &::vkCreateInstance;
-#else
-PFN_vkCreateInstance vkCreateInstance =
-    reinterpret_cast<PFN_vkCreateInstance>(load("vkCreateInstance"));
-#endif
+FN(vkCreateInstance);
 } // namespace wagen
