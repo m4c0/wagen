@@ -4,7 +4,7 @@ module;
 export module wagen;
 
 #if __APPLE__
-import :apple;
+export import :apple;
 #elif _WIN32
 export import :windows;
 #endif
