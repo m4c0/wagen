@@ -15,6 +15,9 @@ HMODULE vulkan() {
 FARPROC load(const char *name) { return GetProcAddress(vulkan(), name); }
 
 export namespace wagen {
+constexpr const auto vk_vulkan_platform_ext =
+    VK_KHR_WIN32_SURFACE_EXTENSION_NAME;
+
 using HWND = ::HWND;
 using VkWin32SurfaceCreateInfoKHR = ::VkWin32SurfaceCreateInfoKHR;
 

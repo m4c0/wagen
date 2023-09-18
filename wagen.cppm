@@ -17,8 +17,6 @@ export import :windows;
 #define ST(x) using x = ::x
 
 export namespace wagen {
-constexpr const auto vk_vulkan_platform_ext = "BLAH";
-
 constexpr const auto vk_api_version_1_0 = VK_API_VERSION_1_0;
 constexpr const auto vk_ext_debug_utils_extension_name =
     VK_EXT_DEBUG_UTILS_EXTENSION_NAME;
