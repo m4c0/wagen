@@ -12,7 +12,10 @@ HMODULE vulkan() {
   return h;
 }
 
-FARPROC load(const char *name) { return GetProcAddress(vulkan(), name); }
+template <typename PFN> auto load(const char *name, PFN &fn, auto... args) {
+  fn = reinterpret_cast<PFN>(GetProcAddress(vulkan(), name));
+  return fn(args...);
+}
 
 export namespace wagen {
 constexpr const auto vk_vulkan_platform_ext =

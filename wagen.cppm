@@ -12,7 +12,7 @@ export import :windows;
 #ifdef __APPLE__
 #define FN(x) PFN_##x x = &::x
 #else
-#define FN(x) PFN_##x x = reinterpret_cast<PFN_##x>(load(#x))
+#define FN(x) PFN_##x x = [](auto... a) { return load(#x, x, a...); }
 #endif
 #define ST(x) using x = ::x
 
