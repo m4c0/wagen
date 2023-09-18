@@ -6,7 +6,7 @@ export module wagen;
 #if __APPLE__
 import :apple;
 #elif _WIN32
-import :windows;
+export import :windows;
 #endif
 
 #ifdef __APPLE__
@@ -191,6 +191,7 @@ FN(vkDestroyRenderPass);
 FN(vkDestroySampler);
 FN(vkDestroySemaphore);
 FN(vkDestroyShaderModule);
+FN(vkDestroySurfaceKHR);
 FN(vkDestroySwapchainKHR);
 FN(vkDeviceWaitIdle);
 FN(vkEndCommandBuffer);
