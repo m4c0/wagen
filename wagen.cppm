@@ -78,6 +78,7 @@ ST(VkGraphicsPipelineCreateInfo);
 ST(VkImage);
 ST(VkImageAspectFlags);
 ST(VkImageCreateInfo);
+ST(VkImageLayout);
 ST(VkImageMemoryBarrier);
 ST(VkImageView);
 ST(VkImageViewCreateInfo);
