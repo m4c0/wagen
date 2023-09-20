@@ -148,6 +148,7 @@ FN(vkCmdBindDescriptorSets);
 FN(vkCmdBindPipeline);
 FN(vkCmdBindVertexBuffers);
 FN(vkCmdCopyBufferToImage);
+FN(vkCmdCopyImageToBuffer);
 FN(vkCmdDraw);
 FN(vkCmdEndRenderPass);
 FN(vkCmdExecuteCommands);
