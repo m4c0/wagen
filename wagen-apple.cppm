@@ -13,6 +13,11 @@ static auto load_vulkan() {
     silog::log(silog::info, "Using Vulkan dynamic loader");
     return res;
   }
+  res = dlopen("libMoltenVK.dylib", RTLD_NOW | RTLD_LOCAL);
+  if (res != nullptr) {
+    silog::log(silog::info, "Using MoltenVK");
+    return res;
+  }
   return dlopen(nullptr, RTLD_LAZY);
 }
 auto vulkan() {
