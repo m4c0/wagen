@@ -1,8 +1,18 @@
 module;
 #include "Vulkan-Headers/include/vulkan/vulkan_core.h"
 #include "Vulkan-Headers/include/vulkan/vulkan_metal.h"
+#include <dlfcn.h>
+#include <stdlib.h>
 
 export module wagen:apple;
+
+auto vulkan() {
+  static auto h = dlopen(nullptr, RTLD_LAZY);
+  return h;
+}
+
+auto get_proc_address(const char *name) { return dlsym(vulkan(), name); }
+void exit_process() { exit(9); }
 
 export namespace wagen {
 using CAMetalLayer = ::CAMetalLayer;

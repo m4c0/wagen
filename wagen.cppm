@@ -2,6 +2,7 @@ module;
 #include "Vulkan-Headers/include/vulkan/vulkan_core.h"
 
 export module wagen;
+import silog;
 
 #if __APPLE__
 export import :apple;
@@ -9,12 +10,66 @@ export import :apple;
 export import :windows;
 #endif
 
-#ifdef __APPLE__
-#define FN(x) PFN_##x x = &::x
-#else
 #define FN(x) PFN_##x x = [](auto... a) { return load(#x, x, a...); }
-#endif
 #define ST(x) using x = ::x
+
+export namespace wagen {
+VkDevice &device() {
+  static VkDevice i{};
+  return i;
+}
+VkInstance &instance() {
+  static VkInstance i{};
+  return i;
+}
+} // namespace wagen
+
+template <typename T> static auto load_proc_addr(const char *name) {
+  auto res = reinterpret_cast<T>(get_proc_address(name));
+  if (!res) {
+    silog::log(silog::error, "Proc loader [%s] not found in Vulkan", name);
+    exit_process();
+  }
+  return res;
+}
+
+auto get_instance_proc_addr(VkInstance ctx, const char *name) {
+  static auto res =
+      load_proc_addr<PFN_vkGetInstanceProcAddr>("vkGetInstanceProcAddr");
+  return res(ctx, name);
+}
+auto get_device_proc_addr(VkDevice ctx, const char *name) {
+  static auto res =
+      load_proc_addr<PFN_vkGetDeviceProcAddr>("vkGetDeviceProcAddr");
+  return res(ctx, name);
+}
+
+template <typename PFN> auto load(const char *name, PFN &fn, auto... args) {
+  fn = reinterpret_cast<PFN>(get_instance_proc_addr(wagen::instance(), name));
+  if (!fn) {
+    silog::log(silog::error, "Base proc [%s] not found in Vulkan", name);
+    exit_process();
+  }
+  return fn(args...);
+}
+template <typename PFN>
+auto load(const char *name, PFN &fn, VkInstance i, auto... args) {
+  fn = reinterpret_cast<PFN>(get_instance_proc_addr(i, name));
+  if (!fn) {
+    silog::log(silog::error, "Instance proc [%s] not found in Vulkan", name);
+    exit_process();
+  }
+  return fn(i, args...);
+}
+template <typename PFN>
+auto load(const char *name, PFN &fn, VkDevice d, auto... args) {
+  fn = reinterpret_cast<PFN>(get_device_proc_addr(d, name));
+  if (!fn) {
+    silog::log(silog::error, "Device proc [%s] not found in Vulkan", name);
+    exit_process();
+  }
+  return fn(d, args...);
+}
 
 export namespace wagen {
 constexpr const auto vk_api_version_1_0 = VK_API_VERSION_1_0;
@@ -218,15 +273,6 @@ FN(vkResetFences);
 FN(vkUnmapMemory);
 FN(vkUpdateDescriptorSets);
 FN(vkWaitForFences);
-
-VkDevice &device() {
-  static VkDevice i{};
-  return i;
-}
-VkInstance &instance() {
-  static VkInstance i{};
-  return i;
-}
 
 template <auto *Fn, typename... Args>
 VKAPI_ATTR auto VKAPI_CALL callback(Args... in) {
