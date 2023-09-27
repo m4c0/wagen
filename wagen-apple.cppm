@@ -5,9 +5,18 @@ module;
 #include <stdlib.h>
 
 export module wagen:apple;
+import silog;
 
+static auto load_vulkan() {
+  auto res = dlopen("libvulkan.dylib", RTLD_NOW | RTLD_LOCAL);
+  if (res != nullptr) {
+    silog::log(silog::info, "Using Vulkan dynamic loader");
+    return res;
+  }
+  return dlopen(nullptr, RTLD_LAZY);
+}
 auto vulkan() {
-  static auto h = dlopen(nullptr, RTLD_LAZY);
+  static auto h = load_vulkan();
   return h;
 }
 
