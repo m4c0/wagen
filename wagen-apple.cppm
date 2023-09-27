@@ -29,9 +29,6 @@ using VkMetalSurfaceCreateInfoEXT = ::VkMetalSurfaceCreateInfoEXT;
 
 constexpr const auto vk_vulkan_platform_ext =
     VK_EXT_METAL_SURFACE_EXTENSION_NAME;
-
-PFN_vkCreateMetalSurfaceEXT vkCreateMetalSurfaceEXT =
-    &::vkCreateMetalSurfaceEXT;
 } // namespace wagen
 
 #ifdef LECO_TARGET_IPHONEOS

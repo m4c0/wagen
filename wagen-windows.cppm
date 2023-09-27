@@ -33,9 +33,5 @@ constexpr const auto vk_vulkan_platform_ext =
 using HWND = ::HWND;
 using VkWin32SurfaceCreateInfoKHR = ::VkWin32SurfaceCreateInfoKHR;
 
-PFN_vkCreateWin32SurfaceKHR vkCreateWin32SurfaceKHR = [](auto... a) {
-  return load("vkCreateWin32SurfaceKHR", vkCreateWin32SurfaceKHR, a...);
-};
-
 auto get_module_handle = &::GetModuleHandle;
 } // namespace wagen

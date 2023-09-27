@@ -1,6 +1,12 @@
 module;
 #include "Vulkan-Headers/include/vulkan/vulkan_core.h"
 
+#if __APPLE__
+#include "Vulkan-Headers/include/vulkan/vulkan_metal.h"
+#elif _WIN32
+#include "Vulkan-Headers/include/vulkan/vulkan_win32.h"
+#endif
+
 export module wagen;
 import silog;
 
@@ -273,6 +279,12 @@ FN(vkResetFences);
 FN(vkUnmapMemory);
 FN(vkUpdateDescriptorSets);
 FN(vkWaitForFences);
+
+#if __APPLE__
+FN(vkCreateMetalSurfaceEXT);
+#elif _WIN32
+FN(vkCreateWin32SurfaceKHR);
+#endif
 
 template <auto *Fn, typename... Args>
 VKAPI_ATTR auto VKAPI_CALL callback(Args... in) {
