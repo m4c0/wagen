@@ -4,6 +4,9 @@ module;
 #if __APPLE__
 #include "Vulkan-Headers/include/vulkan/vulkan_metal.h"
 #elif _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
 #include "Vulkan-Headers/include/vulkan/vulkan_win32.h"
 #endif
 
