@@ -277,6 +277,7 @@ FN(vkEnumeratePhysicalDevices);
 FN(vkFreeMemory);
 FN(vkGetBufferMemoryRequirements);
 FN(vkGetDeviceQueue);
+FN(vkGetFenceStatus);
 FN(vkGetImageMemoryRequirements);
 FN(vkGetPhysicalDeviceFeatures);
 FN(vkGetPhysicalDeviceFormatProperties);
