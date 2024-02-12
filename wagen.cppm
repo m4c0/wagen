@@ -178,6 +178,7 @@ ST(VkPipelineVertexInputStateCreateInfo);
 ST(VkPipelineViewportStateCreateInfo);
 ST(VkPresentInfoKHR);
 ST(VkPresentModeKHR);
+ST(VkPrimitiveTopology);
 ST(VkPushConstantRange);
 ST(VkQueue);
 ST(VkQueueFamilyProperties);
