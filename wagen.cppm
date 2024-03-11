@@ -23,14 +23,8 @@ export import :windows;
 #define ST(x) using x = ::x
 
 export namespace wagen {
-VkDevice &device() {
-  static VkDevice i{};
-  return i;
-}
-VkInstance &instance() {
-  static VkInstance i{};
-  return i;
-}
+VkDevice &device();
+VkInstance &instance();
 } // namespace wagen
 
 template <typename T> static auto load_proc_addr(const char *name) {
@@ -309,3 +303,11 @@ VKAPI_ATTR auto VKAPI_CALL callback(Args... in) {
   return Fn(in...);
 }
 } // namespace wagen
+
+module :private;
+
+VkDevice g_device{};
+VkDevice &wagen::device() { return g_device; }
+
+VkInstance g_instance{};
+VkInstance &wagen::instance() { return g_instance; }
