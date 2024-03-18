@@ -17,6 +17,8 @@ import silog;
 export import :apple;
 #elif _WIN32
 export import :windows;
+#elif __linux__
+export import :linux;
 #endif
 
 #define FN(x) PFN_##x x = [](auto... a) { return load(#x, x, a...); }
