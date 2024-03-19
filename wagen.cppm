@@ -6,8 +6,10 @@ module;
 #elif _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-
 #include "Vulkan-Headers/include/vulkan/vulkan_win32.h"
+#elif __linux__
+#include <X11/Xlib.h>
+#include "Vulkan-Headers/include/vulkan/vulkan_xlib.h"
 #endif
 
 export module wagen;
@@ -298,6 +300,8 @@ FN(vkWaitForFences);
 FN(vkCreateMetalSurfaceEXT);
 #elif _WIN32
 FN(vkCreateWin32SurfaceKHR);
+#elif __linux__
+FN(vkCreateXlibSurfaceKHR);
 #endif
 
 template <auto *Fn, typename... Args>
