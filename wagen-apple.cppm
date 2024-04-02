@@ -47,6 +47,6 @@ constexpr const auto vk_khr_portability_enumeration_extension_name =
 #endif
 
 #ifdef LECO_TARGET_APPLE
-#pragma leco add_framework CoreFoundation CoreGraphics Foundation IOKit        \
-    IOSurface MetalKit Metal QuartzCore
+#pragma leco add_framework CoreFoundation CoreGraphics Foundation IOKit
+#pragma leco add_framework IOSurface MetalKit Metal QuartzCore
 #endif
