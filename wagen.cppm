@@ -15,12 +15,14 @@ module;
 export module wagen;
 import silog;
 
-#if __APPLE__
+#if LECO_TARGET_APPLE
 export import :apple;
-#elif _WIN32
+#elif LECO_TARGET_WINDOWS
 export import :windows;
-#elif __linux__
+#elif LECO_TARGET_LINUX
 export import :linux;
+#else
+#error unsupported platform
 #endif
 
 #define FN(x) PFN_##x x = [](auto... a) { return load(#x, x, a...); }
