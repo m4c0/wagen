@@ -39,7 +39,7 @@ constexpr const auto vk_khr_portability_enumeration_extension_name =
 } // namespace wagen
 
 #ifdef LECO_TARGET_IOS
-#pragma leco add_static "MoltenVK/ios/libMoltenVK.a"
+#pragma leco add_dll "MoltenVK/ios/libMoltenVK.dylib"
 #pragma leco add_framework UIKit
 #elif LECO_TARGET_MACOSX
 #pragma leco add_dll "MoltenVK/macOS/libMoltenVK.dylib"
