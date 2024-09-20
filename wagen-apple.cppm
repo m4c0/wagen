@@ -39,14 +39,13 @@ constexpr const auto vk_khr_portability_enumeration_extension_name =
 } // namespace wagen
 
 #ifdef LECO_TARGET_IOS
-#pragma leco add_dll "MoltenVK/ios/libMoltenVK.dylib"
 #pragma leco add_framework UIKit
 #elif LECO_TARGET_MACOSX
-#pragma leco add_dll "MoltenVK/macOS/libMoltenVK.dylib"
 #pragma leco add_framework AppKit
 #endif
 
 #ifdef LECO_TARGET_APPLE
 #pragma leco add_framework CoreFoundation CoreGraphics Foundation IOKit
 #pragma leco add_framework IOSurface MetalKit Metal QuartzCore
+#pragma leco add_xcframework "MoltenVK.xcframework"
 #endif
