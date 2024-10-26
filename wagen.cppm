@@ -157,6 +157,7 @@ ST(VkLayerProperties);
 ST(VkMemoryAllocateFlags);
 ST(VkMemoryAllocateInfo);
 ST(VkMemoryRequirements);
+ST(VkOffset2D);
 ST(VkPhysicalDevice);
 ST(VkPhysicalDeviceFeatures);
 ST(VkPhysicalDeviceMemoryProperties);
