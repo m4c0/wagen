@@ -226,6 +226,7 @@ FN(vkCmdBindVertexBuffers);
 FN(vkCmdCopyBuffer);
 FN(vkCmdCopyBufferToImage);
 FN(vkCmdCopyImageToBuffer);
+FN(vkCmdDispatch);
 FN(vkCmdDraw);
 FN(vkCmdEndRenderPass);
 FN(vkCmdExecuteCommands);
