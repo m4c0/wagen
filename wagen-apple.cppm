@@ -18,6 +18,7 @@ static auto load_vulkan() {
     silog::log(silog::info, "Using MoltenVK");
     return res;
   }
+  silog::log(silog::info, "Using static linked MoltenVK");
   return dlopen(nullptr, RTLD_LAZY);
 }
 auto vulkan() {
