@@ -1,3 +1,4 @@
 out
 MoltenVK.xcframework
 MoltenVK
+*.dylib
