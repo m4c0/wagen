@@ -8,16 +8,22 @@ export module wagen:apple;
 import silog;
 
 static auto load_vulkan() {
+#ifdef LECO_TARGET_MACOSX
   auto res = dlopen("libvulkan.dylib", RTLD_NOW | RTLD_LOCAL);
   if (res != nullptr) {
     silog::log(silog::info, "Using Vulkan dynamic loader");
     return res;
   }
+  silog::log(silog::debug, "Failed to load libvulkan.dylib: %s", dlerror());
+
   res = dlopen("libMoltenVK.dylib", RTLD_NOW | RTLD_LOCAL);
   if (res != nullptr) {
     silog::log(silog::info, "Using MoltenVK dynamic library");
     return res;
   }
+  silog::log(silog::debug, "Failed to load libMoltenVK.dylib: %s", dlerror());
+#endif
+
   silog::log(silog::info, "Using static linked MoltenVK");
   return dlopen(nullptr, RTLD_LAZY);
 }
@@ -45,15 +51,13 @@ constexpr const auto vk_khr_portability_enumeration_extension_name =
 #pragma leco add_framework AppKit
 #endif
 
+#if 0 && LECO_TARGET_MACOSX
+#pragma leco add_dll "libvulkan.dylib"
+#else
+#pragma leco add_xcframework "MoltenVK.xcframework"
+#endif
+
 #ifdef LECO_TARGET_APPLE
 #pragma leco add_framework CoreFoundation CoreGraphics Foundation IOKit
 #pragma leco add_framework IOSurface MetalKit Metal QuartzCore
-// Switch this if you got all requirements for the dynamic loader
-#if 1
-#pragma leco add_xcframework "MoltenVK.xcframework"
-#elif LECO_TARGET_MACOSX
-#pragma leco add_dll "libvulkan.dylib"
-#else
-#error dylibs are a pain to embed in iOS apps, just use the xcframework please
-#endif
 #endif
