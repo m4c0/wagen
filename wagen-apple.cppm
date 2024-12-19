@@ -15,7 +15,7 @@ static auto load_vulkan() {
   }
   res = dlopen("libMoltenVK.dylib", RTLD_NOW | RTLD_LOCAL);
   if (res != nullptr) {
-    silog::log(silog::info, "Using MoltenVK");
+    silog::log(silog::info, "Using MoltenVK dynamic library");
     return res;
   }
   silog::log(silog::info, "Using static linked MoltenVK");
