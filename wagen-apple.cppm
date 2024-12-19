@@ -48,5 +48,12 @@ constexpr const auto vk_khr_portability_enumeration_extension_name =
 #ifdef LECO_TARGET_APPLE
 #pragma leco add_framework CoreFoundation CoreGraphics Foundation IOKit
 #pragma leco add_framework IOSurface MetalKit Metal QuartzCore
+// Switch this if you got all requirements for the dynamic loader
+#if 1
 #pragma leco add_xcframework "MoltenVK.xcframework"
+#elif LECO_TARGET_MACOSX
+#pragma leco add_dll "libvulkan.dylib"
+#else
+#error dylibs are a pain to embed in iOS apps, just use the xcframework please
+#endif
 #endif
