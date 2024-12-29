@@ -198,6 +198,8 @@ ST(VkSemaphore);
 ST(VkSemaphoreCreateInfo);
 ST(VkShaderModule);
 ST(VkShaderModuleCreateInfo);
+ST(VkSpecializationInfo);
+ST(VkSpecializationMapEntry);
 ST(VkSubmitInfo);
 ST(VkSubpassContents);
 ST(VkSubpassDependency);
