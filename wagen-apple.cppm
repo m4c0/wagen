@@ -9,6 +9,17 @@ import silog;
 
 static auto load_vulkan() {
 #ifdef LECO_TARGET_MACOSX
+  auto env = getenv("WAGEN_VULKAN_LOADER");
+  if (env) {
+    silog::log(silog::info, "Trying to use loader at [%s]", env);
+
+    auto res = dlopen(env, RTLD_NOW | RTLD_LOCAL);
+    if (res != nullptr) {
+      silog::log(silog::info, "Using Vulkan dynamic loader defined via environment");
+      return res;
+    }
+    silog::log(silog::debug, "Failed to load %s: %s", env, dlerror());
+  }
   auto res = dlopen("libvulkan.dylib", RTLD_NOW | RTLD_LOCAL);
   if (res != nullptr) {
     silog::log(silog::info, "Using Vulkan dynamic loader");
