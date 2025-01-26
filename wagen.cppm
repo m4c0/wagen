@@ -83,13 +83,11 @@ auto load(const char *name, PFN &fn, VkDevice d, auto... args) {
 export namespace wagen {
 constexpr const auto vk_api_version_1_0 = VK_API_VERSION_1_0;
 constexpr const auto vk_api_version_1_1 = VK_API_VERSION_1_1;
-constexpr const auto vk_ext_debug_utils_extension_name =
-    VK_EXT_DEBUG_UTILS_EXTENSION_NAME;
+constexpr const auto vk_ext_debug_utils_extension_name = VK_EXT_DEBUG_UTILS_EXTENSION_NAME;
 constexpr const auto vk_false = VK_FALSE;
-constexpr const auto vk_khr_surface_extension_name =
-    VK_KHR_SURFACE_EXTENSION_NAME;
-constexpr const auto vk_khr_swapchain_extension_name =
-    VK_KHR_SWAPCHAIN_EXTENSION_NAME;
+constexpr const auto vk_khr_surface_extension_name = VK_KHR_SURFACE_EXTENSION_NAME;
+constexpr const auto vk_khr_swapchain_extension_name = VK_KHR_SWAPCHAIN_EXTENSION_NAME;
+constexpr const auto vk_khr_synchronization2_extension_name = VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME;
 constexpr const auto vk_null_handle = VK_NULL_HANDLE;
 constexpr const auto vk_queue_family_ignored = VK_QUEUE_FAMILY_IGNORED;
 constexpr const auto vk_subpass_external = VK_SUBPASS_EXTERNAL;
