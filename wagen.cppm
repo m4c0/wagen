@@ -96,7 +96,9 @@ constexpr const auto vk_whole_size = VK_WHOLE_SIZE;
 
 ST(VkApplicationInfo);
 ST(VkAttachmentDescription);
+ST(VkAttachmentLoadOp);
 ST(VkAttachmentReference);
+ST(VkAttachmentStoreOp);
 ST(VkBool32);
 ST(VkBuffer);
 ST(VkBufferCopy);
