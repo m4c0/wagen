@@ -231,6 +231,7 @@ FN(vkCmdDispatch);
 FN(vkCmdDraw);
 FN(vkCmdEndRenderPass);
 FN(vkCmdExecuteCommands);
+FN(vkCmdNextSubpass);
 FN(vkCmdPipelineBarrier);
 FN(vkCmdPushConstants);
 FN(vkCmdSetScissor);
