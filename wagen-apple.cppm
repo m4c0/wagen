@@ -62,7 +62,7 @@ constexpr const auto vk_khr_portability_enumeration_extension_name =
 #pragma leco add_framework AppKit
 #endif
 
-#if 0 && LECO_TARGET_MACOSX
+#if LECO_TARGET_MACOSX
 #pragma leco add_dll "libvulkan.dylib"
 #else
 #pragma leco add_xcframework "MoltenVK.xcframework"
