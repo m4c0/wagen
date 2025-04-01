@@ -236,6 +236,7 @@ FN(vkCmdCopyBufferToImage);
 FN(vkCmdCopyImageToBuffer);
 FN(vkCmdDispatch);
 FN(vkCmdDraw);
+FN(vkCmdDrawIndexed);
 FN(vkCmdEndRenderPass);
 FN(vkCmdExecuteCommands);
 FN(vkCmdFillBuffer);
