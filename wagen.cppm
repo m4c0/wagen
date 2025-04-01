@@ -228,6 +228,7 @@ FN(vkBindBufferMemory);
 FN(vkBindImageMemory);
 FN(vkCmdBeginRenderPass);
 FN(vkCmdBindDescriptorSets);
+FN(vkCmdBindIndexBuffer);
 FN(vkCmdBindPipeline);
 FN(vkCmdBindVertexBuffers);
 FN(vkCmdCopyBuffer);
