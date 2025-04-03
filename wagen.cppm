@@ -183,6 +183,7 @@ ST(VkPipelineShaderStageCreateInfo);
 ST(VkPipelineStageFlags);
 ST(VkPipelineVertexInputStateCreateInfo);
 ST(VkPipelineViewportStateCreateInfo);
+ST(VkPolygonMode);
 ST(VkPresentInfoKHR);
 ST(VkPresentModeKHR);
 ST(VkPrimitiveTopology);
