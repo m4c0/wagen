@@ -196,6 +196,7 @@ ST(VkRenderPassBeginInfo);
 ST(VkRenderPassCreateInfo);
 ST(VkResult);
 ST(VkSampler);
+ST(VkSamplerAddressMode);
 ST(VkSamplerCreateInfo);
 ST(VkSamplerYcbcrConversion);
 ST(VkSamplerYcbcrConversionInfo);
