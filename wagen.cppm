@@ -29,9 +29,10 @@ export import :linux;
 #define ST(x) using x = ::x
 
 export namespace wagen {
-VkDevice &device();
-VkInstance &instance();
-} // namespace wagen
+  VkPhysicalDevice &physical_device();
+  VkDevice &device();
+  VkInstance &instance();
+}
 
 template <typename T> static auto load_proc_addr(const char *name) {
   auto res = reinterpret_cast<T>(get_proc_address(name));
@@ -335,6 +336,9 @@ VKAPI_ATTR auto VKAPI_CALL callback(Args... in) {
 } // namespace wagen
 
 module :private;
+
+VkPhysicalDevice g_physical_device{};
+VkPhysicalDevice &wagen::physical_device() { return g_physical_device; }
 
 VkDevice g_device{};
 VkDevice &wagen::device() { return g_device; }
