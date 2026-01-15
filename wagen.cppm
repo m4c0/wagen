@@ -155,6 +155,8 @@ ST(VkImageCreateInfo);
 ST(VkImageLayout);
 ST(VkImageMemoryBarrier);
 ST(VkImageSubresourceRange);
+ST(VkImageUsageFlags);
+ST(VkImageUsageFlagBits);
 ST(VkImageView);
 ST(VkImageViewCreateInfo);
 ST(VkInstance);
