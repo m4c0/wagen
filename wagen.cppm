@@ -199,6 +199,7 @@ ST(VkRenderPass);
 ST(VkRenderPassBeginInfo);
 ST(VkRenderPassCreateInfo);
 ST(VkResult);
+ST(VkSampleCountFlagBits);
 ST(VkSampler);
 ST(VkSamplerAddressMode);
 ST(VkSamplerCreateInfo);
