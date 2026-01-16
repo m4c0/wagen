@@ -249,6 +249,7 @@ FN(vkCmdBindVertexBuffers);
 FN(vkCmdCopyBuffer);
 FN(vkCmdCopyBufferToImage);
 FN(vkCmdCopyImageToBuffer);
+FN(vkCmdCopyQueryPoolResults);
 FN(vkCmdDispatch);
 FN(vkCmdDraw);
 FN(vkCmdDrawIndexed);
