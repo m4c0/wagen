@@ -187,6 +187,7 @@ ST(VkPipelineMultisampleStateCreateInfo);
 ST(VkPipelineRasterizationStateCreateInfo);
 ST(VkPipelineShaderStageCreateInfo);
 ST(VkPipelineStageFlags);
+ST(VkPipelineStageFlagBits);
 ST(VkPipelineVertexInputStateCreateInfo);
 ST(VkPipelineViewportStateCreateInfo);
 ST(VkPolygonMode);
