@@ -326,6 +326,7 @@ FN(vkMapMemory);
 FN(vkQueuePresentKHR);
 FN(vkQueueSubmit);
 FN(vkResetFences);
+FN(vkResetQueryPool);
 FN(vkSetDebugUtilsObjectNameEXT);
 FN(vkUnmapMemory);
 FN(vkUpdateDescriptorSets);
