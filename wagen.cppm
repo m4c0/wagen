@@ -257,6 +257,7 @@ FN(vkCmdPipelineBarrier);
 FN(vkCmdPushConstants);
 FN(vkCmdSetScissor);
 FN(vkCmdSetViewport);
+FN(vkCmdWriteTimestamp);
 FN(vkCreateBuffer);
 FN(vkCreateCommandPool);
 FN(vkCreateComputePipelines);
