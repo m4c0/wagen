@@ -256,6 +256,7 @@ FN(vkCmdFillBuffer);
 FN(vkCmdNextSubpass);
 FN(vkCmdPipelineBarrier);
 FN(vkCmdPushConstants);
+FN(vkCmdResetQueryPool);
 FN(vkCmdSetScissor);
 FN(vkCmdSetViewport);
 FN(vkCmdWriteTimestamp);
