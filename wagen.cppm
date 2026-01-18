@@ -107,6 +107,8 @@ ST(VkBufferCopy);
 ST(VkBufferCreateInfo);
 ST(VkBufferImageCopy);
 ST(VkBufferMemoryBarrier);
+ST(VkBufferUsageFlags);
+ST(VkBufferUsageFlagBits);
 ST(VkClearColorValue);
 ST(VkClearValue);
 ST(VkCommandBuffer);
