@@ -224,6 +224,7 @@ ST(VkShaderModuleCreateInfo);
 ST(VkSpecializationInfo);
 ST(VkSpecializationMapEntry);
 ST(VkStencilOp);
+ST(VkStencilOpState);
 ST(VkSubmitInfo);
 ST(VkSubpassContents);
 ST(VkSubpassDependency);
