@@ -253,6 +253,7 @@ FN(vkCmdBindPipeline);
 FN(vkCmdBindVertexBuffers);
 FN(vkCmdCopyBuffer);
 FN(vkCmdCopyBufferToImage);
+FN(vkCmdCopyImage);
 FN(vkCmdCopyImageToBuffer);
 FN(vkCmdCopyQueryPoolResults);
 FN(vkCmdDispatch);
