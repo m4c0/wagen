@@ -156,6 +156,7 @@ ST(VkImageAspectFlags);
 ST(VkImageAspectFlagBits);
 ST(VkImageCreateInfo);
 ST(VkImageLayout);
+ST(VkImageCopy);
 ST(VkImageMemoryBarrier);
 ST(VkImageSubresourceRange);
 ST(VkImageUsageFlags);
