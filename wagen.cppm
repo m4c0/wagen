@@ -267,6 +267,7 @@ FN(vkCmdNextSubpass);
 FN(vkCmdPipelineBarrier);
 FN(vkCmdPushConstants);
 FN(vkCmdResetQueryPool);
+FN(vkCmdSetPolygonModeEXT);
 FN(vkCmdSetScissor);
 FN(vkCmdSetViewport);
 FN(vkCmdWriteTimestamp);
