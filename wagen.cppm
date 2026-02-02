@@ -227,6 +227,7 @@ ST(VkSpecializationInfo);
 ST(VkSpecializationMapEntry);
 ST(VkStencilOp);
 ST(VkStencilOpState);
+ST(VkStructureType);
 ST(VkSubmitInfo);
 ST(VkSubpassContents);
 ST(VkSubpassDependency);
