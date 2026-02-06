@@ -264,6 +264,8 @@ FN(vkCmdCopyQueryPoolResults);
 FN(vkCmdDispatch);
 FN(vkCmdDraw);
 FN(vkCmdDrawIndexed);
+FN(vkCmdDrawIndirect);
+FN(vkCmdDrawIndexedIndirect);
 FN(vkCmdEndRenderPass);
 FN(vkCmdExecuteCommands);
 FN(vkCmdFillBuffer);
