@@ -141,6 +141,8 @@ ST(VkDeviceCreateInfo);
 ST(VkDeviceMemory);
 ST(VkDeviceQueueCreateInfo);
 ST(VkDeviceSize);
+ST(VkDrawIndexedIndirectCommand);
+ST(VkDrawIndirectCommand);
 ST(VkDynamicState);
 ST(VkExtensionProperties);
 ST(VkExtent2D);
