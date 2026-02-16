@@ -96,6 +96,8 @@ constexpr const auto vk_subpass_external = VK_SUBPASS_EXTERNAL;
 constexpr const auto vk_true = VK_TRUE;
 constexpr const auto vk_whole_size = VK_WHOLE_SIZE;
 
+ST(VkAccessFlagBits);
+ST(VkAccessFlags);
 ST(VkApplicationInfo);
 ST(VkAttachmentDescription);
 ST(VkAttachmentLoadOp);
