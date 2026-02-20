@@ -172,6 +172,7 @@ ST(VkInstanceCreateInfo);
 ST(VkLayerProperties);
 ST(VkMemoryAllocateFlags);
 ST(VkMemoryAllocateInfo);
+ST(VkMemoryBarrier);
 ST(VkMemoryRequirements);
 ST(VkObjectType);
 ST(VkOffset2D);
