@@ -124,6 +124,7 @@ EN(VkFormat);
 EN(VkFormatFeatureFlagBits);
 EN(VkFrontFace);
 EN(VkImageAspectFlagBits);
+EN(VkImageCreateFlagBits);
 EN(VkImageLayout);
 EN(VkImageTiling);
 EN(VkImageType);
