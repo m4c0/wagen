@@ -232,6 +232,7 @@ ST(VkPhysicalDeviceProperties);
 ST(VkPhysicalDeviceProperties2);
 ST(VkPhysicalDeviceSamplerYcbcrConversionFeatures);
 ST(VkPhysicalDeviceSynchronization2Features);
+ST(VkPhysicalDeviceVulkan11Features);
 ST(VkPipeline);
 ST(VkPipelineColorBlendAttachmentState);
 ST(VkPipelineColorBlendStateCreateInfo);
