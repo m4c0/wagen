@@ -259,6 +259,7 @@ ST(VkRect2D);
 ST(VkRenderPass);
 ST(VkRenderPassBeginInfo);
 ST(VkRenderPassCreateInfo);
+ST(VkRenderPassMultiviewCreateInfo);
 ST(VkSampler);
 ST(VkSamplerAddressMode);
 ST(VkSamplerCreateInfo);
