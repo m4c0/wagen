@@ -202,6 +202,7 @@ ST(VkExtensionProperties);
 ST(VkExtent2D);
 ST(VkFence);
 ST(VkFenceCreateInfo);
+ST(VkFormatFeatureFlags);
 ST(VkFormatProperties);
 ST(VkFramebuffer);
 ST(VkFramebufferCreateInfo);
