@@ -322,6 +322,7 @@ FN(vkCmdResetQueryPool);
 FN(vkCmdSetPolygonModeEXT);
 FN(vkCmdSetScissor);
 FN(vkCmdSetViewport);
+FN(vkCmdUpdateBuffer);
 FN(vkCmdWriteTimestamp);
 FN(vkCreateBuffer);
 FN(vkCreateCommandPool);
